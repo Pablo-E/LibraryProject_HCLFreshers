@@ -1,0 +1,43 @@
+CREATE DATABASE library;
+
+USE library;
+ 
+CREATE TABLE person(
+
+id_person int NOT NULL PRIMARY KEY,
+name varchar(15) NOT NULL, 
+last_name varchar(15) NOT NULL, 
+birthdate date, 
+gender char, 
+email varchar(30), 
+phone varchar(10) NOT NULL, 
+address varchar(200), 
+user varchar(8) NOT NULL, 
+password varchar(8) NOT NULL, 
+status boolean NOT NULL, 
+role varchar(8) NOT NULL
+
+);
+
+CREATE TABLE book (
+
+isbn varchar(17) NOT NULL PRIMARY KEY,
+title varchar(30) NOT NULL,
+author varchar(100) NOT NULL,
+pages int NOT NULL,
+publisher varchar(30) NOT NULL,
+genre varchar(20) NOT NULL,
+inventory smallint NOT NULL
+
+);
+
+CREATE TABLE loan (
+
+id_loan int NOT NULL PRIMARY KEY,
+id_staff int FOREIGN KEY REFERENCES person (id_person) NOT NULL,
+id_client int FOREIGN KEY REFERENCES person (id_person) NOT NULL,
+isbn varchar(17) FOREIGN KEY REFERENCES book (isbn),
+date date NOT NULL,
+is_returned boolean NOT NULL
+
+);
