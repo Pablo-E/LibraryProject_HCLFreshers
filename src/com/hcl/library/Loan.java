@@ -1,3 +1,7 @@
+package com.hcl.library;
+
+import java.util.Date;
+
 public class Loan{
 	private int idLoan;
 	private String isbn;

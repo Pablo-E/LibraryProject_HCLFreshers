@@ -1,4 +1,4 @@
-package com.hcl.library.fresherproject;
+package com.hcl.library;
 
 public class Staff{
 	private int idStaff;
